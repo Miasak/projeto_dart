@@ -1,12 +1,12 @@
 App basico para listagem de Produtos
 
-#Descrição:
+# Descrição:
 
 App simples de carregamento de api com produtos sendo listados separadamente em containers cada um com 
 seu nome, preço e quantidade com funções basicas de visualização, criação, edição e delete de predutos.
 O applicativo foi pensado com o conseito de gerenciar produtos de estoque.  
 
-#Funcionalidades
+# Funcionalidades
 Uma tela simples de entrada
 
 Lista de Produtos: A tela principal exibe uma lista de produtos com nome, preço e quantidade.
@@ -18,7 +18,7 @@ Editar Produto: Permite editar as informações de um produto existente.
 Excluir Produto: O usuário pode excluir um produto da lista.
 
 
-#main.dart
+# main.dart
 Esse é o arquivo principal do app, onde tudo começa. Aqui, o app é inicializado com o widget MyApp que, por sua vez, chama a tela de entrada (EntradaPage).
 
 import 'package:flutter/material.dart';
@@ -48,7 +48,7 @@ MyApp Widget:
 Este widget define o tema global e a navegação inicial do app. Ele configura a tela inicial para ser a EntradaPage.
 
 
-#produtos_page.dart
+# produtos_page.dart
 Essa página é a principal do app, onde as formataçoes de como os produtos são listados, editados ou excluídos.
 
 Essa classe define o modelo de dados de um produto e tem métodos para converter os dados entre o formato JSON e o formato de objeto Dart.
@@ -304,7 +304,7 @@ Exibe um diálogo pedindo confirmação para excluir um produto. Se confirmado, 
 FutureBuilder:
 Esse widget constrói a interface de acordo com o estado do Future. Ele aguarda os produtos serem carregados e os exibe na tela. Enquanto carrega, ele mostra um CircularProgressIndicator, e se ocorrer um erro, ele exibe uma mensagem de erro.
 
-#produto_service.dart
+# produto_service.dart
 Essa classe é responsável por fazer as requisições HTTP à API para buscar, adicionar, editar ou excluir produtos.
 
 import 'dart:convert';
