@@ -21,7 +21,7 @@ Excluir Produto: O usuário pode excluir um produto da lista.
 # main.dart
 Esse é o arquivo principal do app, onde tudo começa. Aqui, o app é inicializado com o widget MyApp que, por sua vez, chama a tela de entrada (EntradaPage).
 
-import 'package:flutter/material.dart';
+'''import 'package:flutter/material.dart';
 import 'entrada_page.dart'; 
 
 void main() {
@@ -39,7 +39,7 @@ class MyApp extends StatelessWidget {
       home: const EntradaPage(),
     );
   }
-}
+}'''
 
 Função runApp:
 Essa função inicializa o Flutter e diz ao aplicativo qual widget será o ponto de entrada. Nesse caso, o widget MyApp.
