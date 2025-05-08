@@ -21,7 +21,8 @@ Excluir Produto: O usuário pode excluir um produto da lista.
 # main.dart
 Esse é o arquivo principal do app, onde tudo começa. Aqui, o app é inicializado com o widget MyApp que, por sua vez, chama a tela de entrada (EntradaPage).
 
-'''import 'package:flutter/material.dart';
+'''dart
+import 'package:flutter/material.dart';
 import 'entrada_page.dart'; 
 
 void main() {
@@ -52,7 +53,7 @@ Este widget define o tema global e a navegação inicial do app. Ele configura a
 Essa página é a principal do app, onde as formataçoes de como os produtos são listados, editados ou excluídos.
 
 Essa classe define o modelo de dados de um produto e tem métodos para converter os dados entre o formato JSON e o formato de objeto Dart.
-
+'''dart
 class Produto {
   final int? id;
   final String nome;
@@ -73,7 +74,7 @@ class Produto {
       preco: (json['preco'] as num).toDouble(),
       quantidade: (json['quantidade'] as num).toInt(),
     );
-  }
+  }'''
 
 Produto:
 A classe define o que é um produto no app. Um produto possui id, nome, preco e quantidade.
@@ -84,7 +85,7 @@ Método de fábrica que cria um objeto Produto a partir de um mapa JSON (como o 
 toJson():
 Método que converte o objeto Produto de volta para o formato JSON para enviar à API (quando adicionamos ou editamos um produto).
 
-
+'''dart
 import 'package:flutter/material.dart';
 import 'produtos_service.dart';
 
@@ -108,13 +109,13 @@ class _ProdutosPageState extends State<ProdutosPage> {
     setState(() {
       _produtosFuture = ProdutoService.getProdutos();
     });
-  }
+  }'''
 _produtosFuture:
 Aqui é definida uma variável que irá armazenar a lista de produtos. Usamos um Future porque os dados vêm de uma API, que pode demorar para carregar.
 
 _carregarProdutos():
 Método que chama a função getProdutos da classe ProdutoService, que vai buscar os produtos na API.
-
+'''dart
 void _mostrarDialogoProduto({Produto? produtoExistente}) {
     final nomeController = TextEditingController(text: produtoExistente?.nome ?? '');
     final precoController = TextEditingController(text: produtoExistente?.preco.toString() ?? '');
@@ -189,10 +190,10 @@ void _mostrarDialogoProduto({Produto? produtoExistente}) {
         ],
       ),
     );
-  }
+  }'''
 _mostrarDialogoProduto():
 Exibe um diálogo para criar ou editar um produto. Se um produto existente for passado como parâmetro, ele preenche os campos do formulário com os dados desse produto.
-
+'''dart
 void _confirmarExclusao(int id) {
   showDialog(
     context: context,
@@ -228,10 +229,10 @@ void _confirmarExclusao(int id) {
       ],
     ),
   );
-}
+}'''
 _confirmarExclusao():
 Exibe um diálogo pedindo confirmação para excluir um produto. Se confirmado, a função deleteProduto é chamada para remover o produto da API.
-
+'''dart
 @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -300,13 +301,13 @@ Exibe um diálogo pedindo confirmação para excluir um produto. Se confirmado, 
       ),
     );
   }
-}
+}'''
 FutureBuilder:
 Esse widget constrói a interface de acordo com o estado do Future. Ele aguarda os produtos serem carregados e os exibe na tela. Enquanto carrega, ele mostra um CircularProgressIndicator, e se ocorrer um erro, ele exibe uma mensagem de erro.
 
 # produto_service.dart
 Essa classe é responsável por fazer as requisições HTTP à API para buscar, adicionar, editar ou excluir produtos.
-
+'''dart
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'produtos_page.dart';
@@ -359,7 +360,7 @@ class ProdutoService {
       throw Exception('Erro ao deletar produto');
     }
   }
-}
+}'''
 getProdutos():
 Faz uma requisição GET à API para buscar todos os produtos. Se a resposta for bem-sucedida (statusCode == 200), ela decodifica os dados e retorna uma lista de objetos Produto.
 
